@@ -29,7 +29,7 @@ function generatePassword () {
     var  passLength = Number(prompt("Password extent: Enter a number between 8 and 128"))
 
   }
-window.alert("Your password will be" + passLength + "characters long");
+window.alert("Your password will be " + passLength + " characters long");
 
   // return "please try again";
 
@@ -62,37 +62,44 @@ window.alert("Your password will be" + passLength + "characters long");
   for (var i = 0; i <passLength; i++ ) {
     var randomDigit = Math.floor (Math.random ()*4)
     
-    if (randomDigit == 0 && lowercase ==true){
-   var getrandomcharacter = getRandomChar(alphaDefault);
-   bigSad = bigSad.concat(getrandomcharacter);
+ if (randomDigit == 0 && lowercase ==true){
+   var randomGen = getRandomChar(alphaDefault);
+   bigSad = bigSad.concat(randomGen);
+    } else if (randomDigit ==0 && lowercase == false) {
+      i--;
     }
-
-console.log(i);
-
-if (randomDigit == 1 && uppercase ==true){
-  var getrandomcharacter = getRandomChar(alphaCaps);
-  bigSad = bigSad.concat(getrandomcharacter);
-   }
-  
-
-
-
-if (randomDigit == 2 && specChars ==true){
-    var getrandomcharacter = getRandomChar(specChars);
-    bigSad = bigSad.concat(getrandomcharacter);
-     }
     
-     
-
-if (randomDigit == 3 && numbers ==true){
-        var getrandomcharacter = getRandomChar(numbers);
-        bigSad = bigSad.concat(getrandomcharacter);
-         }
+ if (randomDigit == 1 && uppercase ==true){
+      var randomGen = getRandomChar(alphaCaps);
+      bigSad = bigSad.concat(randomGen);
+       }  else if (randomDigit ==1 && uppercase == false) {
+        i--;
+      }
+       
+       
+ if (randomDigit == 2 && specChar ==true){
+        var randomGen = getRandomChar(specChars);
+        bigSad = bigSad.concat(randomGen);
+         } else if (randomDigit ==2 && specChar == false) {
+          i--;
+        }
          
-        
-        
-  return bigSad;
+         
+if (randomDigit == 3 && numb==true){
+          var randomGen = getRandomChar(numbers);
+          bigSad = bigSad.concat(randomGen);
+           } else if (randomDigit ==3 && numb == false) {
+            i--;
+          }
+
+  
+  
 } 
+console.log(bigSad.length);
+return bigSad;
+}
+
+  
 
 
 // Write password to the #password input
@@ -106,33 +113,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-//   var randomString=
-//   //checks prompts
-
-//   //generate random string
-
-//   return 
-
-// Write password to the #password input
-
-
-// for (var i= 0; i <=passwordLength; i++) {
-
-// function getAlphaCaps(){
-//   return String.alphabet()
-// }
-// function getSpecChars(){
-//   return String.alphabet()
-// }
-// function getNumbers(){
-//   return String.alphabet()
-// }
-
-//     var getrandomcharacter = getRandomChar (specChars + numbers + lowercase + alphaCaps)
-//     //bigSad is the string and "concat" is adding on to that string
-// bigSad = bigSad.concat(getrandomcharacter)
